@@ -2,7 +2,8 @@ box: node
 
 build:
   services:
-    - elasticsearch:5    
+    - elasticsearch:5
+
   steps:
     - script:
       name: env
@@ -11,7 +12,7 @@ build:
     - script: 
       name: "Wait for ElasticSearch connection" 
       code: | 
-        until $(curl --head --fail http://$ELASTICSEARCH_PORT_9200_TCP_ADDR:$ELASTICSEARCH_PORT_9200_TCP_PORT); do sleep 5; done
+        until curl --fail http://$ELASTICSEARCH_PORT_9200_TCP_ADDR:$ELASTICSEARCH_PORT_9200_TCP_PORT/; do sleep 5; done
 
     - script:
         name: echo nodejs information
