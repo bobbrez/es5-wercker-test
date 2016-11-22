@@ -13,7 +13,6 @@ build:
       name: "Wait for ElasticSearch connection" 
       code: | 
         until curl --fail http://$ELASTICSEARCH_PORT_9200_TCP_ADDR:$ELASTICSEARCH_PORT_9200_TCP_PORT/; do sleep 5; done
-        exit 0
 
     - script:
         name: echo nodejs information
