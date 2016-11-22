@@ -2,7 +2,7 @@ box: node:6
 
 build:
   services:
-    - elasticsearch:2
+    - elasticsearch:5
 
   steps:
     - script:
